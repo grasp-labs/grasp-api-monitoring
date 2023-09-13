@@ -23,12 +23,20 @@ jobs:
 
       - name: Run Postman Collection
         run: |
+          # Capture the current date in YYYY-MM-DD format
+          current_date=$(date +'%Y-%m-%d')
+
+          # Define the report filename with the date
+          report_filename="YourCollectionName_${current_date}.html"
+
           newman run postman/daas_service_collection.json \
             -e postman/daas_service_env.json \
-            --reporters cli,html,json
+            --reporters cli,html,json \ 
+            --reporter-html-export "newman/${report_filename}"
 
       - name: Upload Postman Report
         uses: actions/upload-artifact@v2
         with:
-          name: postman-report
-          path: path/to/your/postman_report.html
+          aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws s3 cp newman/${report_filename} s3://grasp-service-monitoring
