@@ -19,7 +19,7 @@ jobs:
           node-version: 14
 
       - name: Install Newman
-        run: npm install -g newman
+        run: npm install -g newman newman-reporter-html
 
       - name: Run Postman Collection
         run: |
