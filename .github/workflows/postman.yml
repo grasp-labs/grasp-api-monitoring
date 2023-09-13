@@ -23,8 +23,8 @@ jobs:
 
       - name: Run Postman Collection
         run: |
-          newman run path/to/your/postman_collection.json \
-            -e path/to/your/environment.json \
+          newman run postman/daas_service_collection.json \
+            -e postman/daas_service_env.json \
             --reporters cli,html,json
 
       - name: Upload Postman Report
