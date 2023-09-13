@@ -1,0 +1,39 @@
+{
+	"info": {
+		"_postman_id": "b8e14df1-8be8-4175-b079-e44e851c57cf",
+		"name": "daas-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16005517",
+		"_collection_link": "https://grasplabs.postman.co/workspace/grasp-api-monitoring~1fc67708-dcaf-4a85-8455-4b2acd6e097f/collection/16005517-b8e14df1-8be8-4175-b079-e44e851c57cf?action=share&source=collection_link&creator=16005517"
+	},
+	"item": [
+		{
+			"name": "dev",
+			"item": [
+				{
+					"name": "customer management",
+					"item": [
+						{
+							"name": "health-check",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{daas_cm_root}}/health-check/",
+									"host": [
+										"{{daas_cm_root}}"
+									],
+									"path": [
+										"health-check",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

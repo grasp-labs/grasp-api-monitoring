@@ -1,0 +1,21 @@
+{
+	"id": "771d8cb7-7437-4284-a091-f370ca2524ed",
+	"name": "grasp-api-env",
+	"values": [
+		{
+			"key": "daas_host",
+			"value": "https://grasp-daas.com",
+			"type": "default",
+			"enabled": true
+		},
+		{
+			"key": "daas_cm_root",
+			"value": "{{daas_host}}/api/cm-dev/v1",
+			"type": "default",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-09-13T18:59:33.941Z",
+	"_postman_exported_using": "Postman/10.17.8-230905-0807"
+}
